@@ -27,4 +27,6 @@
         factory=".localroles.SegGenRole"
         />
 
+  <include package=".portlets" /> 
+
 </configure>
