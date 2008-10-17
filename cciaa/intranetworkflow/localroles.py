@@ -29,3 +29,4 @@ class SegGenRole(object):
     
     title = _(u"ufficio_seggen", default=u"Può dirigere l'Ente")
     required_permission = config.DelegateSegGenRole
+
