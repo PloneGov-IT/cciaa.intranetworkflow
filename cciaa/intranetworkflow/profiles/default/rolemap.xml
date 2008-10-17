@@ -134,6 +134,7 @@
       <role name="Authenticated"/>
     </permission>
     <permission name="List folder contents" acquire="True">
+      <role name="Contributor"/>
       <role name="CSer"/>
       <role name="CUff"/>
       <role name="Editor"/>
@@ -204,7 +205,6 @@
       <role name="CSer"/>
       <role name="CUff"/>
       <role name="Editor"/>
-	  <role name="Contributor"/>
       <role name="SegGen"/>
     </permission>
 
