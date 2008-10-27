@@ -12,7 +12,6 @@ if context.portal_membership.isAnonymousUser():
     return []
 
 wf_results = list(context.portal_workflow.getWorklistsResults())
-
 wf_results.sort(lambda x, y: cmp(x.modified(), y.modified()))
 member = context.portal_membership.getAuthenticatedMember()
 
@@ -21,9 +20,17 @@ member = context.portal_membership.getAuthenticatedMember()
 
 if 'CSer' in member.getRolesInContext(context) and (not context.REQUEST.get('showcuff') or context.REQUEST.get('showcuff')!='y'):
     tmpList = []
+    portal_workflow = context.portal_workflow
     for j in wf_results:
-        if context.portal_workflow.getInfoFor(j, 'review_state', '???')=='attesa_cser':
+        if portal_workflow.getInfoFor(j, 'review_state', '???')=='attesa_cser':
             tmpList.append(j)
     wf_results = tmpList
-
+elif 'CSer' in member.getRolesInContext(context):
+    # Sono CSer ma voglio solo i documenti del CUff
+    tmpList = []
+    portal_workflow = context.portal_workflow
+    for j in wf_results:
+        if portal_workflow.getInfoFor(j, 'review_state', '???')=='attesa':
+            tmpList.append(j)
+    wf_results = tmpList
 return wf_results
