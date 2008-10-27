@@ -20,6 +20,7 @@ member = context.portal_membership.getAuthenticatedMember()
 
 if 'CSer' in member.getRolesInContext(context) and (not context.REQUEST.get('showcuff') or context.REQUEST.get('showcuff')!='y'):
     tmpList = []
+    context.plone_log("sdfsdfsd")
     portal_workflow = context.portal_workflow
     for j in wf_results:
         if portal_workflow.getInfoFor(j, 'review_state', '???')=='attesa_cser':
@@ -28,6 +29,7 @@ if 'CSer' in member.getRolesInContext(context) and (not context.REQUEST.get('sho
 elif 'CSer' in member.getRolesInContext(context):
     # Sono CSer ma voglio solo i documenti del CUff
     tmpList = []
+    context.plone_log("sdfsdfsd")
     portal_workflow = context.portal_workflow
     for j in wf_results:
         if portal_workflow.getInfoFor(j, 'review_state', '???')=='attesa':
