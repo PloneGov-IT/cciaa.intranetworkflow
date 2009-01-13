@@ -13,6 +13,7 @@
   <exit-transition transition_id="retract"/>
   <exit-transition transition_id="to_comune"/>
   <exit-transition transition_id="to_cser"/>
+  <exit-transition transition_id="hide"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>CSer</permission-role>
@@ -80,6 +81,7 @@
  <state state_id="comune" title="Comune">
   <description>Stato di lavoro comune, modificabile da chiunque. Per documenti poco importanti.</description>
   <exit-transition transition_id="publish"/>
+  <exit-transition transition_id="hide"/>
   <exit-transition transition_id="reject"/>
   <permission-map name="Access contents information"
                   acquired="True">
@@ -115,7 +117,7 @@
   </permission-map>
  </state>
  <state state_id="published" title="Published">
-  <exit-transition transition_id="archivia"/>
+  <exit-transition transition_id="hide"/>
   <exit-transition transition_id="reject"/>
   <exit-transition transition_id="retract"/>
   <permission-map name="Access contents information"
@@ -150,11 +152,50 @@
    <permission-role>SegGen</permission-role>
   </permission-map>
  </state>
+ <state state_id="private" title="Private">
+  <exit-transition transition_id="retract"/>
+  <exit-transition transition_id="reject"/>
+  <exit-transition transition_id="publish"/>
+  <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>CSer</permission-role>
+   <permission-role>CUff</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Guest</permission-role>
+   <permission-role>SegGen</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>CSer</permission-role>
+   <permission-role>CUff</permission-role>
+   <permission-role>SegGen</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>CSer</permission-role>
+   <permission-role>CUff</permission-role>
+   <permission-role>SegGen</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>CSer</permission-role>
+   <permission-role>CUff</permission-role>
+   <permission-role>Guest</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>SegGen</permission-role>
+  </permission-map>
+ </state>
  <state state_id="visible" title="Bozza">
   <exit-transition transition_id="publish"/>
   <exit-transition transition_id="submit"/>
   <exit-transition transition_id="to_comune"/>
   <exit-transition transition_id="to_cser"/>
+  <exit-transition transition_id="hide"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>CSer</permission-role>
@@ -191,11 +232,12 @@
    <permission-role>SegGen</permission-role>
   </permission-map>
  </state>
- <transition transition_id="archivia" title="Archivia"
-             new_state="" trigger="USER"
-             before_script="archive" after_script="">
-  <description>Archivia il documento corrente dopo aver creato la nuova versione</description>
-  
+ <transition transition_id="hide" title="Member makes content private"
+             new_state="private" trigger="USER"
+             before_script="" after_script="">
+  <action url="%(content_url)s/content_hide_form"
+          category="workflow">Make private</action>
+  <description>Il revisore rende il documento riservato</description>
   <guard>
    <guard-permission>CamCom: Approvazione livello 1</guard-permission>
   </guard>
@@ -360,9 +402,6 @@
   <guard>
   </guard>
  </variable>
- <script script_id="archive" type="Script (Python)"
-         filename="workflows/camcom_public_workflow/scripts/archive.py"
-         module="" function=""/>
  <script script_id="notificaHome" type="Script (Python)"
          filename="workflows/camcom_public_workflow/scripts/notificaHome.py"
          module="" function=""/>

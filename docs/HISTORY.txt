@@ -1,8 +1,19 @@
 Changelog
 =========
 
+1.1.0 - Unreleased
+------------------
+
+ * Aggiunta dello stato privato per il camcom_public_workflow
+ * Rimosso codice non usato da Plone 2.5
+
+1.0.1 - Unreleased
+------------------
+
+ * Fix minori e installazione in CCIAA di Treviso
+
 1.0.0 - Unreleased
 ----------------
 
-* Initial release
+* Prima release
 
