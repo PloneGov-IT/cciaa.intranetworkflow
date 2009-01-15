@@ -10,7 +10,10 @@ PROJECTNAME = 'cciaa.intranetworkflow'
 REVIEW_LEV1 = 'CamCom: Approvazione livello 1'
 REVIEW_LEV2 = 'CamCom: Approvazione livello 2'
 
-CCIAA_ROLES_GLOBALLY_ASSIGNABLE = False
+try:
+    from customize import CCIAA_ROLES_GLOBALLY_ASSIGNABLE
+except ImportError:
+    CCIAA_ROLES_GLOBALLY_ASSIGNABLE = False
 
 setDefaultRoles(REVIEW_LEV1, ('Manager',))
 setDefaultRoles(REVIEW_LEV2, ('Manager',))
