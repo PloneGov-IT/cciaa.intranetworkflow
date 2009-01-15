@@ -163,7 +163,7 @@
    <permission-role>CSer</permission-role>
    <permission-role>CUff</permission-role>
    <permission-role>Editor</permission-role>
-   <permission-role>Guest</permission-role>
+   <permission-role>Reader</permission-role>
    <permission-role>SegGen</permission-role>
   </permission-map>
   <permission-map name="Change portal events"
@@ -185,7 +185,7 @@
    <permission-role>Owner</permission-role>
    <permission-role>CSer</permission-role>
    <permission-role>CUff</permission-role>
-   <permission-role>Guest</permission-role>
+   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>SegGen</permission-role>
   </permission-map>
