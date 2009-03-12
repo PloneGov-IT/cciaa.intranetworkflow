@@ -252,5 +252,15 @@
       <role name="SegGen"/>
 	</permission>
 	
+	
+	
+	<permission name="CMFEditions: Checkout to location"
+                acquire="True">
+      <role name="CSer"/>
+      <role name="CUff"/>
+      <role name="Manager"/>
+      <role name="SegGen"/>
+    </permission>
+	
   </permissions>
 </rolemap>

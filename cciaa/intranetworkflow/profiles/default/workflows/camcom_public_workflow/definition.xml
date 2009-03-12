@@ -7,6 +7,8 @@
  <permission>Change portal events</permission>
  <permission>Modify portal content</permission>
  <permission>View</permission>
+ <permission>CMFEditions: Checkout to location</permission>
+ <permission>CMFEditions: Save new version</permission>
  <state state_id="attesa" title="Attesa approvazione">
   <exit-transition transition_id="publish"/>
   <exit-transition transition_id="reject"/>
@@ -116,77 +118,95 @@
    <permission-role>SegGen</permission-role>
   </permission-map>
  </state>
- <state state_id="published" title="Published">
-  <exit-transition transition_id="hide"/>
-  <exit-transition transition_id="reject"/>
-  <exit-transition transition_id="retract"/>
-  <permission-map name="Access contents information"
-                  acquired="True">
-   <permission-role>Manager</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>CSer</permission-role>
-   <permission-role>CUff</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>SegGen</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>CSer</permission-role>
-   <permission-role>CUff</permission-role>
-   <permission-role>SegGen</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>CSer</permission-role>
-   <permission-role>CUff</permission-role>
-   <permission-role>SegGen</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="True">
-   <permission-role>Manager</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>CSer</permission-role>
-   <permission-role>CUff</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>SegGen</permission-role>
-  </permission-map>
- </state>
  <state state_id="private" title="Private">
   <exit-transition transition_id="retract"/>
   <exit-transition transition_id="reject"/>
   <exit-transition transition_id="publish"/>
   <permission-map name="Access contents information"
                   acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Owner</permission-role>
    <permission-role>CSer</permission-role>
    <permission-role>CUff</permission-role>
    <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>SegGen</permission-role>
   </permission-map>
+  <permission-map name="CMFEditions: Checkout to location"
+                  acquired="True">
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Change portal events"
                   acquired="False">
-   <permission-role>Manager</permission-role>
    <permission-role>CSer</permission-role>
    <permission-role>CUff</permission-role>
+   <permission-role>Manager</permission-role>
    <permission-role>SegGen</permission-role>
   </permission-map>
   <permission-map name="Modify portal content"
                   acquired="False">
-   <permission-role>Manager</permission-role>
    <permission-role>CSer</permission-role>
    <permission-role>CUff</permission-role>
+   <permission-role>Manager</permission-role>
    <permission-role>SegGen</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Owner</permission-role>
    <permission-role>CSer</permission-role>
    <permission-role>CUff</permission-role>
-   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>SegGen</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="published" title="Published">
+  <exit-transition transition_id="hide"/>
+  <exit-transition transition_id="reject"/>
+  <exit-transition transition_id="retract"/>
+  <permission-map name="Access contents information"
+                  acquired="True">
+   <permission-role>CSer</permission-role>
+   <permission-role>CUff</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>SegGen</permission-role>
+  </permission-map>
+  <permission-map name="CMFEditions: Checkout to location"
+                  acquired="False">
+   <permission-role>CSer</permission-role>
+   <permission-role>CUff</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>SegGen</permission-role>
+  </permission-map>
+  <permission-map name="CMFEditions: Save new version"
+                  acquired="False">
+   <permission-role>CSer</permission-role>
+   <permission-role>CUff</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>SegGen</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events"
+                  acquired="False">
+   <permission-role>CSer</permission-role>
+   <permission-role>CUff</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>SegGen</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content"
+                  acquired="False">
+   <permission-role>CSer</permission-role>
+   <permission-role>CUff</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>SegGen</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>CSer</permission-role>
+   <permission-role>CUff</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>SegGen</permission-role>
   </permission-map>
  </state>
@@ -232,12 +252,13 @@
    <permission-role>SegGen</permission-role>
   </permission-map>
  </state>
- <transition transition_id="hide" title="Member makes content private"
+ <transition transition_id="hide"
+             title="Member makes content private"
              new_state="private" trigger="USER"
              before_script="" after_script="">
+  <description>Il revisore rende il documento riservato</description>
   <action url="%(content_url)s/content_hide_form"
           category="workflow">Make private</action>
-  <description>Il revisore rende il documento riservato</description>
   <guard>
    <guard-permission>CamCom: Approvazione livello 1</guard-permission>
   </guard>
