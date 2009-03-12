@@ -1,5 +1,8 @@
 Changelog
 =========
+1.1.1 - Unreleased
+------------------
+ *aggiunte regole per il versionamento dei contenuti pubblicati e privati
 
 1.1.0 - Unreleased
 ------------------
