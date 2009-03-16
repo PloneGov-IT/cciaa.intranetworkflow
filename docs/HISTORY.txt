@@ -1,8 +1,11 @@
 Changelog
 =========
+
 1.1.1 - Unreleased
 ------------------
- *aggiunte regole per il versionamento dei contenuti pubblicati e privati
+
+ * aggiunte regole per il versionamento dei contenuti pubblicati e privati
+ * workflow usato anche per i file
 
 1.1.0 - Unreleased
 ------------------
