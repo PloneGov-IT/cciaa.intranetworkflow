@@ -7,13 +7,14 @@
 <!-- The CamCom review box -->
 <div metal:define-macro="portlet"
      tal:define="DateTime python:modules['DateTime'].DateTime;
-                 results context/my_camcom_worklist;
+                 results_tuple context/my_camcom_worklist;
+				 results python:results_tuple[0];
+				 hasReviewLev2 python:results_tuple[1];
 				 member view/getMember;
-                 rolesInContext python:member.getRolesInContext(context);
                  toLocalizedTime nocall:context/@@plone/toLocalizedTime;">
 
     <dl class="portlet" id="portlet-workflow-camcom-review"
-	     tal:condition="python: rolesInContext and ('CUff' in rolesInContext or 'CSer' in rolesInContext)">
+	     tal:condition="python: results or member.has_permission('CamCom: Approvazione livello 2', context)">
 
         <dt class="portletHeader">Da controllare</dt>
 
@@ -45,7 +46,7 @@
             </div>
             </tal:block>
 
-            <div tal:condition="python:'CSer' in rolesInContext"
+            <div tal:condition="python:member.has_permission('CamCom: Approvazione livello 2', context)"
                  tal:define="url_to_here python:(context.isPrincipiaFolderish and context.absolute_url()) or context.getParentNode().absolute_url()">
                <a tal:condition="python:context.REQUEST.get('showcuff',None)!='y'" href="#" tal:attributes="href string:${url_to_here}?showcuff=y">Vedi lista cuff</a>
 	       <a tal:condition="python:context.REQUEST.get('showcuff',None)=='y'" href="#" tal:attributes="href string:${url_to_here}">Vedi lista cser</a>
