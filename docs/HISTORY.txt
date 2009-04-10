@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.2.0
+-----
+ * full review list
+ * Fix grafici alla portlet
+
 1.1.2
 -----
 

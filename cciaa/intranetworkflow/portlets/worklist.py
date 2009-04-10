@@ -38,15 +38,24 @@ class Assignment(base.Assignment):
 
 class Renderer(base.Renderer):
 
-    # render() will be called to render the portlet
-    
     render = ViewPageTemplateFile('camcom_portlet_review.pt')
     
     def getMember(self):
         context = self.context
         mtool = getToolByName(context, 'portal_membership')
         return mtool.getAuthenticatedMember()
-    
+
+    def getMemberNameOrId(self, member_id):
+        """Return the name of the member, or its id if no name available"""
+        mtool = getToolByName(context, 'portal_membership')
+        member = mtool.getMemberById(member_id)
+        return member.getProperty('fullname', None) or member.getId()
+
+    @property
+    def full_review_link(self):
+        portal = getToolByName(self.context, 'portal_url').getPortalObject()
+        return "%s/full_cciaa_review_list" % portal.absolute_url()
+
 # Define the add forms and edit forms, based on zope.formlib. These use
 # the interface to determine which fields to render.
 

@@ -7,7 +7,7 @@
 <!-- The CamCom review box -->
 <div metal:define-macro="portlet"
      tal:define="DateTime python:modules['DateTime'].DateTime;
-                 results_tuple context/my_camcom_worklist;
+                 results_tuple python:context.my_camcom_worklist(limitAt=5);
 				 results python:results_tuple[0];
 				 hasReviewLev2 python:results_tuple[1];
 				 member view/getMember;
@@ -36,7 +36,7 @@
                              tal:attributes="src string:${here/portal_url}/${o/getIcon};
                                              title o/Type;" />
                         <span tal:replace="o/Title|o/getId">
-                        	Extended Calendar Product
+                        	My Document
                         </span>
                     </a>
 
@@ -46,14 +46,25 @@
             </div>
             </tal:block>
 
-            <div tal:condition="python:member.has_permission('CamCom: Approvazione livello 2', context)"
-                 tal:define="url_to_here python:(context.isPrincipiaFolderish and context.absolute_url()) or context.getParentNode().absolute_url()">
-               <a tal:condition="python:context.REQUEST.get('showcuff',None)!='y'" href="#" tal:attributes="href string:${url_to_here}?showcuff=y">Vedi lista cuff</a>
-	       <a tal:condition="python:context.REQUEST.get('showcuff',None)=='y'" href="#" tal:attributes="href string:${url_to_here}">Vedi lista cser</a>
-            </div>
-
-
         </dd>
+
+    <dd class="portletFooter">
+        <a class="tile"
+           tal:attributes="href view/full_review_link">Mostra tutti</a>
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+
+	<dd class="portletFooter"
+        tal:condition="python:member.has_permission('CamCom: Approvazione livello 2', context)"
+        tal:define="url_to_here python:(context.isPrincipiaFolderish and context.absolute_url()) or context.getParentNode().absolute_url()">
+            <a class="tile"
+			   tal:condition="python:context.REQUEST.get('showcuff',None)!='y'" href="#" tal:attributes="href string:${url_to_here}?showcuff=y">Vedi lista C.Uff.</a>
+	        <a class="tile"
+			   tal:condition="python:context.REQUEST.get('showcuff',None)=='y'" href="#" tal:attributes="href string:${url_to_here}">Vedi lista C.Serv.</a>
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+     </dd>
 
     </dl>
 
