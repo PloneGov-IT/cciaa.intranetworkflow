@@ -16,7 +16,7 @@
     <dl class="portlet" id="portlet-workflow-camcom-review"
 	     tal:condition="python: results or member.has_permission('CamCom: Approvazione livello 2', context)">
 
-        <dt class="portletHeader">Da controllare</dt>
+        <dt class="portletHeader"><span class="tile">Da controllare</span></dt>
 
         <dd class="portletItem">
 
@@ -32,9 +32,9 @@
                        class="marker"
                        tal:attributes="href string:${o/absolute_url}/view;
                                        title o/Description">
-                        <img src="" height="16" width="16"
+                        <!--img src="" height="16" width="16"
                              tal:attributes="src string:${here/portal_url}/${o/getIcon};
-                                             title o/Type;" />
+                                             title o/Type;" /-->
                         <span tal:replace="o/Title|o/getId">
                         	My Document
                         </span>
