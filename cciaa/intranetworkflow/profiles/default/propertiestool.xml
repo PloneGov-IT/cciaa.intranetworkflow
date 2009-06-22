@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+ <object name="site_properties" meta_type="Plone Property Sheet"
+         purge="False">
+
+  <property name="allowRolesToAddKeywords" type="lines">
+   <element value="Manager"/>
+   <element value="CUff"/>
+   <element value="CSer"/>
+   <element value="SegGen"/>
+  </property>
+
+ </object>
+</object>
