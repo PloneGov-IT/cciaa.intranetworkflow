@@ -16,8 +16,11 @@
     <dl class="portlet" id="portlet-workflow-camcom-review"
 	     tal:condition="python: results or member.has_permission('CamCom: Approvazione livello 2', context)">
 
-        <dt class="portletHeader"><span class="tile">Da controllare</span></dt>
-
+        <dt class="portletHeader">
+        	<span class="portletTopLeft"></span>
+			<span class="tile">Da controllare</span>
+			<span class="portletTopRight"></span></dt>
+			
         <dd class="portletItem">
 
             <div class="portletContent odd" tal:condition="not:results">
@@ -48,7 +51,7 @@
 
         </dd>
 
-    <dd class="portletFooter">
+    <dd class="portletFooter footer_1">
         <a class="tile"
            tal:attributes="href view/full_review_link">Mostra tutti</a>
         <span class="portletBottomLeft"></span>
