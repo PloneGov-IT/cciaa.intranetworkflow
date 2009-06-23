@@ -1,6 +1,6 @@
 <metadata>
   <description>Workflow e permessi della intranet camerale</description>
-  <version>1.3.1</version>
+  <version>1.3.2-SVN-Unreleased</version>
   <dependencies>
     <dependency>profile-redturtle.deletepolicy:default</dependency>
   </dependencies>
