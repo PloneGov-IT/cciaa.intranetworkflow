@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.3.3 (11-09-2009)
+------------------
+
+ * Sistemati permessi per usare correttamente ExternalEditor
+
 1.3.2
 -----
 
