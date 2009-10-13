@@ -31,17 +31,3 @@ def createUsers(context,portal):
         kwargs['email'] = e[0]+"@redturtle.it"
         acl_users.userFolderAddUser(login= e[0], password=e[1],roles=e[2],domains=(), groups=(),)
         acl_users.getUserById(e[0]).setProperties(**kwargs)
-
-
-
-def addDefaultPortlets(area, portal):
-    # BBB: Non è più usata in quanto viene tutto fatto tramite evento su creazione AreaGrigio
-    leftColumn = component.getUtility(IPortletManager, name=u'plone.leftcolumn', context=area)
-    rightColumn = component.getUtility(IPortletManager, name=u'plone.rightcolumn', context=area)
-    
-    left = component.getMultiAdapter((area, leftColumn,), IPortletAssignmentMapping, context=area)
-    right = component.getMultiAdapter((area, rightColumn,), IPortletAssignmentMapping, context=area)
-    
-    if 'grigio.InPrimoPiano' not in left and 'grigio.InPrimoPiano' not in right:
-        #BBB: capire come metterla ad un certo punto, sotto il navigatore
-        left[u'grigio.InPrimoPiano'] = in_primo_piano.Assignment()
