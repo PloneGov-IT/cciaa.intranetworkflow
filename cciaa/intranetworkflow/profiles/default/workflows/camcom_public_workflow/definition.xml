@@ -4,11 +4,11 @@
              description="" state_variable="review_state"
              initial_state="visible">
  <permission>Access contents information</permission>
+ <permission>CMFEditions: Checkout to location</permission>
+ <permission>CMFEditions: Save new version</permission>
  <permission>Change portal events</permission>
  <permission>Modify portal content</permission>
  <permission>View</permission>
- <permission>CMFEditions: Checkout to location</permission>
- <permission>CMFEditions: Save new version</permission>
  <state state_id="attesa" title="Attesa approvazione">
   <exit-transition transition_id="publish"/>
   <exit-transition transition_id="reject"/>
@@ -23,6 +23,12 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>SegGen</permission-role>
+  </permission-map>
+  <permission-map name="CMFEditions: Checkout to location"
+                  acquired="True">
+  </permission-map>
+  <permission-map name="CMFEditions: Save new version"
+                  acquired="True">
   </permission-map>
   <permission-map name="Change portal events"
                   acquired="False">
@@ -60,6 +66,12 @@
    <permission-role>Manager</permission-role>
    <permission-role>SegGen</permission-role>
   </permission-map>
+  <permission-map name="CMFEditions: Checkout to location"
+                  acquired="True">
+  </permission-map>
+  <permission-map name="CMFEditions: Save new version"
+                  acquired="True">
+  </permission-map>
   <permission-map name="Change portal events"
                   acquired="False">
    <permission-role>CSer</permission-role>
@@ -87,34 +99,39 @@
   <exit-transition transition_id="reject"/>
   <permission-map name="Access contents information"
                   acquired="True">
-   <permission-role>Manager</permission-role>
    <permission-role>CSer</permission-role>
    <permission-role>CUff</permission-role>
    <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
    <permission-role>SegGen</permission-role>
+  </permission-map>
+  <permission-map name="CMFEditions: Checkout to location"
+                  acquired="True">
+   <permission-role>Editor</permission-role>
+  </permission-map>
+  <permission-map name="CMFEditions: Save new version"
+                  acquired="True">
   </permission-map>
   <permission-map name="Change portal events"
                   acquired="False">
-   <permission-role>Manager</permission-role>
    <permission-role>CSer</permission-role>
    <permission-role>CUff</permission-role>
+   <permission-role>Manager</permission-role>
    <permission-role>SegGen</permission-role>
-  </permission-map>
-  <permission-map name="Delete objects" acquired="True">
   </permission-map>
   <permission-map name="Modify portal content"
                   acquired="False">
-   <permission-role>Manager</permission-role>
    <permission-role>CSer</permission-role>
    <permission-role>CUff</permission-role>
    <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
    <permission-role>SegGen</permission-role>
   </permission-map>
   <permission-map name="View" acquired="True">
-   <permission-role>Manager</permission-role>
    <permission-role>CSer</permission-role>
    <permission-role>CUff</permission-role>
    <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
    <permission-role>SegGen</permission-role>
   </permission-map>
  </state>
@@ -134,7 +151,9 @@
   </permission-map>
   <permission-map name="CMFEditions: Checkout to location"
                   acquired="True">
-   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="CMFEditions: Save new version"
+                  acquired="True">
   </permission-map>
   <permission-map name="Change portal events"
                   acquired="False">
@@ -174,18 +193,15 @@
    <permission-role>SegGen</permission-role>
   </permission-map>
   <permission-map name="CMFEditions: Checkout to location"
-                  acquired="False">
+                  acquired="True">
    <permission-role>CSer</permission-role>
    <permission-role>CUff</permission-role>
+   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>SegGen</permission-role>
   </permission-map>
   <permission-map name="CMFEditions: Save new version"
-                  acquired="False">
-   <permission-role>CSer</permission-role>
-   <permission-role>CUff</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>SegGen</permission-role>
+                  acquired="True">
   </permission-map>
   <permission-map name="Change portal events"
                   acquired="False">
@@ -224,6 +240,12 @@
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>SegGen</permission-role>
+  </permission-map>
+  <permission-map name="CMFEditions: Checkout to location"
+                  acquired="True">
+  </permission-map>
+  <permission-map name="CMFEditions: Save new version"
+                  acquired="True">
   </permission-map>
   <permission-map name="Change portal events"
                   acquired="False">

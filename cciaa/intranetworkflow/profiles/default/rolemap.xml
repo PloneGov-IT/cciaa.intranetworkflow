@@ -269,11 +269,18 @@
 	
 	<permission name="CMFEditions: Checkout to location"
                 acquire="True">
+      <role name="Manager"/>
+    </permission>
+
+	<permission name="CMFEditions: Save new version"
+                acquire="True">
       <role name="CSer"/>
       <role name="CUff"/>
+	  <role name="Editor"/>
+	  <role name="Owner"/>
       <role name="Manager"/>
       <role name="SegGen"/>
     </permission>
-	
+
   </permissions>
 </rolemap>
