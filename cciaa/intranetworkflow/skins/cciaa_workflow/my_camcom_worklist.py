@@ -23,8 +23,10 @@ hasReviewLev2 = False
 
 elem_count = 0
 
-# Ulteriore filtro, se sono un caposervizio vedo quelli del capoufficio SOLO se ho un parametro particolare
-# Altrimenti ricontrollo tutti gli elementi ed elimino quelli non nello stato giusto
+# Ulteriore filtro, se sono un caposervizio vedo quelli del capoufficio SOLO se ho un parametro
+# particolare.
+# Altrimenti ricontrollo tutti gli elementi ed elimino quelli non nello stato giusto.
+
 tmpList = []
 for j in wf_results:
     if portal_workflow.getInfoFor(j, 'review_state', '???')=='attesa':
@@ -40,7 +42,7 @@ for j in wf_results:
             elem_count+=1
             if limitAt and elem_count>=limitAt:
                 break
-            
+
     elif portal_workflow.getInfoFor(j, 'review_state', '???')=='attesa_cser' and not context.REQUEST.get('showcuff',None):
         if member.has_permission('CamCom: Approvazione livello 2',j):
             hasReviewLev2 = True

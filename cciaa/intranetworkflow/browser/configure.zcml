@@ -10,7 +10,7 @@
       name="full_cciaa_review_list"
       class=".reviewlist.FullReviewListView"
       template="full_cciaa_review_list.pt"
-      permission="cmf.ReviewPortalContent"
+      permission="zope.Public"
       />
 
 </configure>
