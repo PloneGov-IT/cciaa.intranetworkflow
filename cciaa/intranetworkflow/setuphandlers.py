@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from zope import component
-
 from Products.CMFCore.utils import getToolByName
-from plone.portlets.interfaces import IPortletAssignmentMapping, IPortletManager
 
 
 def setupVarious(context):
@@ -12,7 +9,8 @@ def setupVarious(context):
     if context.readDataFile('cciaa.intranetworkflow_various.txt') is None: 
         return
     
-    createUsers(context,portal)
+    createUsers(context, portal)
+
 
 def createUsers(context,portal):
     """Crea gli utnenti di test de portale"""

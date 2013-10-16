@@ -8,7 +8,7 @@
 ##title=
 ##
 mail_host = context.MailHost
-plone_utils = getToolByName(context, 'plone_utils')
+plone_utils = context.plone_utils
 
 message = """E' stato sottoposto a revisione un nuovo contenuto destinato alla home-page.
 
@@ -23,5 +23,11 @@ subject = "Notifica revisione contenuto"
 
 encoding = plone_utils.getSiteEncoding()
 
-
-mail_host.secureSend(message, send_to_address, memail, subject=subject, subtype='plain', charset=encoding, debug=False, From=memail)
+mail_host.send(message,
+               send_to_address,
+               memail,
+               subject=subject,
+               subtype='plain',
+               charset=encoding,
+               debug=False,
+               From=memail)

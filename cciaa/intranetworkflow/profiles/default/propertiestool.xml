@@ -5,6 +5,7 @@
 
   <property name="allowRolesToAddKeywords" type="lines">
    <element value="Manager"/>
+   <element value="Site Administrator"/>
    <element value="CUff"/>
    <element value="CSer"/>
    <element value="SegGen"/>

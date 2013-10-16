@@ -15,9 +15,6 @@
     <type type_id="Topic">
        <bound-workflow workflow_id="camcom_folder_workflow"/>
     </type>
-    <type type_id="Large Plone Folder">
-       <bound-workflow workflow_id="camcom_folder_workflow"/>
-    </type>
 
     <type type_id="File" remove="remove" />
 

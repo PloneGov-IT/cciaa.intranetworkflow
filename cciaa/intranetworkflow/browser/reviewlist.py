@@ -1,13 +1,10 @@
-from zope.component import getMultiAdapter
+# -*- coding: utf-8 -*-
 
-from Acquisition import aq_inner
-from Products.Five import BrowserView
-from Products.CMFCore.utils import getToolByName
-from plone.app.content.browser.tableview import Table, TableKSSView
-import urllib
+from plone.app.content.browser.tableview import Table
 
 from plone.app.content.browser.reviewlist import FullReviewListView as BaseFullReviewListView
 from plone.app.content.browser.reviewlist import ReviewListTable as BaseReviewListTable
+
 
 class FullReviewListView(BaseFullReviewListView):
 

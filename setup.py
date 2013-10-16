@@ -1,23 +1,24 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.3.6'
+version = '2.0.0.dev0'
 
 setup(name='cciaa.intranetworkflow',
       version=version,
-      description="Workflow of the CCIAA Ferrara - C3P project",
+      description="Workflow of the CCIAA - C4P project",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Framework :: Plone",
+        "Framework :: Plone :: 4.3",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='c2p c3p cciaa workflow',
+      keywords='c2p c3p c4p cciaa workflow',
       author='RedTurtle Technology',
-      author_email='sviluppoplone@redturtle.net',
-      url='https://code.redturtle.it/svn/camera_di_commercio_fe/',
+      author_email='sviluppoplone@redturtle.it',
+      url='http://code.redturtle.it/svn/camera-di-commercio-fe/cciaa.intranetworkflow/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['cciaa'],
@@ -25,8 +26,7 @@ setup(name='cciaa.intranetworkflow',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'redturtle.deletepolicy'
-          # -*- Extra requirements: -*-
+          'redturtle.deletepolicy',
       ],
       entry_points="""
       [z3c.autoinclude.plugin]

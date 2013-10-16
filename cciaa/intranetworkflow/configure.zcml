@@ -8,7 +8,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="CCIAA: workflow intranet"
+      title="CCIAA Workflow"
       directory="profiles/default"
       description="Workflow e permessi della intranet camerale"
       provides="Products.GenericSetup.interfaces.EXTENSION"
