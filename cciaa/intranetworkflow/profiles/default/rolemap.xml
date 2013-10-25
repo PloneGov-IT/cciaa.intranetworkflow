@@ -38,6 +38,7 @@
                 acquire="True">
       <role name="CSer"/>
       <role name="CUff"/>
+      <role name="Editor"/>
       <role name="SegGen"/>
       <role name="Site Administrator"/>
     </permission>

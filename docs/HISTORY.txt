@@ -9,6 +9,7 @@ Plone 4(.3) compatibility
 - pyflakes cleanup [keul]
 - Supported the "Site Administrator" role [keul]
 - Added MANIFEST.in file [keul]
+- Added Editor to add folder roles [andrea]
 
 1.3.6 (2010-08-17)
 ------------------
