@@ -27,6 +27,7 @@ setup(name='cciaa.intranetworkflow',
       install_requires=[
           'setuptools',
           'redturtle.deletepolicy',
+          'Products.PloneGazette',
       ],
       entry_points="""
       [z3c.autoinclude.plugin]

@@ -10,6 +10,7 @@ Plone 4(.3) compatibility
 - Supported the "Site Administrator" role [keul]
 - Added MANIFEST.in file [keul]
 - Added Editor to add folder roles [andrea]
+- Added dependency to PloneGazette and fixed permissions [andrea]
 
 1.3.6 (2010-08-17)
 ------------------
