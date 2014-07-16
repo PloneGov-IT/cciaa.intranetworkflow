@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.0.1 (unreleased)
+2.1.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Now requires rt.lastmodifier, and publicly show dates [keul]
 
 2.0.0 (2013-12-16)
 ------------------

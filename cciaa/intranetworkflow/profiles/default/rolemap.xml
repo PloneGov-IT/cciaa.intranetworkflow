@@ -311,8 +311,8 @@
               acquire="True">
     <role name="CSer"/>
     <role name="CUff"/>
-	  <role name="Editor"/>
-	  <role name="Owner"/>
+	<role name="Editor"/>
+	<role name="Owner"/>
     <role name="SegGen"/>
     <role name="Manager"/>
     <role name="Site Administrator"/>
@@ -351,5 +351,20 @@
     <role name="Owner"/>
     <role name="Site Administrator"/>
   </permission>
+
+  <!-- rt.lastmodifier -->
+  <permission name="rt.lastmodifier: documentByLine view modification date"
+                acquire="False">
+      <role name="Anonymous"/>
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+  </permission>
+  <permission name="rt.lastmodifier: documentByLine view publication date"
+                acquire="False">
+      <role name="Anonymous"/>
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+  </permission>
+
   </permissions>
 </rolemap>

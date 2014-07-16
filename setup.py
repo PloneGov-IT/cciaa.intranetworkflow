@@ -27,6 +27,7 @@ setup(name='cciaa.intranetworkflow',
       install_requires=[
           'setuptools',
           'redturtle.deletepolicy',
+          'rt.lastmodifier',
           'TurtledGazette',
       ],
       entry_points="""
