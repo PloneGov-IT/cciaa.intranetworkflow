@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.1.0 (unreleased)
+2.1.0 (2014-07-16)
 ------------------
 
 - Now requires rt.lastmodifier, and publicly show dates [keul]
