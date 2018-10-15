@@ -4,8 +4,8 @@ Changelog
 2.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- pypi publication
+  [cekk]
 
 2.1.0 (2014-07-16)
 ------------------
