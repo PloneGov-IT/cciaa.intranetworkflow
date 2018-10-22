@@ -3,7 +3,6 @@
   <dependencies>
     <dependency>profile-redturtle.deletepolicy:default</dependency>
     <dependency>profile-plone.app.iterate:plone.app.iterate</dependency>
-    <dependency>profile-Products.PloneGazette:default</dependency>
     <dependency>profile-rt.lastmodifier:default</dependency>
   </dependencies>
 </metadata>

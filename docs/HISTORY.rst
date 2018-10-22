@@ -4,13 +4,14 @@ Changelog
 2.1.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove dependency to TurtledGazette.
+  [cekk]
 
 
 2.1.1 (2018-10-15)
 ------------------
 
-- pypi publication
+- pypi publication.
   [cekk]
 
 2.1.0 (2014-07-16)

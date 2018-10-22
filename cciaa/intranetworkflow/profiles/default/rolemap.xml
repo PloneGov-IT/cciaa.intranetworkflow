@@ -318,40 +318,6 @@
     <role name="Site Administrator"/>
   </permission>
 
-  <!-- PloneGazette -->
-  <permission name="PNL Add Newsletter"
-              acquire="True">
-    <role name="CSer"/>
-    <role name="CUff"/>
-    <role name="Editor"/>
-    <role name="Manager"/>
-    <role name="Site Administrator"/>
-  </permission>
-  <permission name="PNL Change Newsletter"
-              acquire="True">
-    <role name="CSer"/>
-    <role name="CUff"/>
-    <role name="Editor"/>
-    <role name="Manager"/>
-    <role name="Owner"/>
-    <role name="Site Administrator"/>
-  </permission>
-  <permission name="PNL Add Newsletter Theme"
-              acquire="True">
-    <role name="CSer"/>
-    <role name="CUff"/>
-    <role name="Manager"/>
-    <role name="Site Administrator"/>
-  </permission>
-  <permission name="PNL Change Newsletter Theme"
-              acquire="True">
-    <role name="CSer"/>
-    <role name="CUff"/>
-    <role name="Manager"/>
-    <role name="Owner"/>
-    <role name="Site Administrator"/>
-  </permission>
-
   <!-- rt.lastmodifier -->
   <permission name="rt.lastmodifier: documentByLine view modification date"
                 acquire="False">
