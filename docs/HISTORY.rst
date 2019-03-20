@@ -1,10 +1,11 @@
 Changelog
 =========
 
-2.1.3 (unreleased)
+2.2.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Plone 5 compatibility.
+  [cekk]
 
 
 2.1.2 (2018-10-22)

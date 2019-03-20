@@ -3,6 +3,7 @@
   <roles>
     <role name="CSer"/>
     <role name="CUff"/>
+    <role name="DUff"/>
     <role name="SegGen"/>
   </roles>
 
@@ -222,7 +223,7 @@
 
     <permission name="Request review"
                 acquire="False">
-      <role name="Manager"/>               	
+      <role name="Manager"/>
       <role name="CSer"/>
       <role name="CUff"/>
       <role name="Editor"/>
@@ -237,7 +238,7 @@
       <role name="SegGen"/>
       <role name="Site Administrator"/>
 	</permission>
-	
+
 	<permission name="Sharing page: Delegate Reviewer role" acquire="False">
 	</permission>
 
@@ -263,7 +264,7 @@
       <role name="Site Administrator"/>
 	</permission>
 
-	<permission name="Sharing page: Delegate Cuff role" acquire="False">
+	<permission name="Sharing page: Delegate CUff role" acquire="False">
       <role name="CSer"/>
       <role name="CUff"/>
       <role name="SegGen"/>
@@ -283,7 +284,7 @@
       <role name="Manager"/>
       <role name="Site Administrator"/>
 	</permission>
-	
+
     <permission name="WebDAV Lock items"
                 acquire="True">
       <role name="CSer"/>
@@ -300,7 +301,7 @@
       <role name="SegGen"/>
       <role name="Site Administrator"/>
     </permission>
-	
+
 	<permission name="CMFEditions: Checkout to location"
                 acquire="False">
       <role name="Manager"/>

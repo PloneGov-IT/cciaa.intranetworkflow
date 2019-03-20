@@ -12,5 +12,11 @@
       template="full_cciaa_review_list.pt"
       permission="zope.Public"
       />
-
+    <browser:page
+      for="*"
+      name="my_camcom_worklist"
+      class=".my_camcom_worklist.View"
+      permission="zope.Public"
+      />
+      
 </configure>

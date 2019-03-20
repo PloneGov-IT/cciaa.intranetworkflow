@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
+"""Init and utils."""
+from zope.i18nmessageid import MessageFactory
 
-from Products.CMFCore.DirectoryView import registerDirectory
-import config
 
-GLOBALS = globals()
-
-registerDirectory('skins', GLOBALS)
+_ = MessageFactory('cciaa.c5p.theme')

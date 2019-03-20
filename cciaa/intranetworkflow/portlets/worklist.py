@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
-
-from zope.interface import implements
-
+from plone import api
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 from Products.CMFCore.utils import getToolByName
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from zope.interface import implements
+
 
 class IWorklistPortlet(IPortletDataProvider):
     """Marker interface for CCIAA Worklist portlets"""
@@ -24,16 +22,13 @@ class Assignment(base.Assignment):
 class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('camcom_portlet_review.pt')
-    
+
     def getMember(self):
-        context = self.context
-        mtool = getToolByName(context, 'portal_membership')
-        return mtool.getAuthenticatedMember()
+        return api.user.get_current()
 
     def getMemberNameOrId(self, member_id):
         """Return the name of the member, or its id if no name available"""
-        mtool = getToolByName(self.context, 'portal_membership')
-        member = mtool.getMemberById(member_id)
+        member = api.user.get_current()
         return member.getProperty('fullname', None) or member.getId()
 
     @property

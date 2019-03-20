@@ -1,7 +1,7 @@
 <!-- The CamCom review box -->
 <div metal:define-macro="portlet"
      tal:define="DateTime python:modules['DateTime'].DateTime;
-                 results_tuple python:context.my_camcom_worklist(limitAt=5);
+                 results_tuple python:context.restrictedTraverse('my_camcom_worklist').get_worklist(limitAt=5);
 				 results python:results_tuple[0];
 				 hasReviewLev2 python:results_tuple[1];
 				 member view/getMember;
@@ -29,9 +29,6 @@
                        class="marker"
                        tal:attributes="href string:${o/absolute_url}/view;
                                        title o/Description">
-                        <!--img src="" height="16" width="16"
-                             tal:attributes="src string:${here/portal_url}/${o/getIcon};
-                                             title o/Type;" /-->
                         <span tal:replace="o/Title|o/getId">
                         	My Document
                         </span>
