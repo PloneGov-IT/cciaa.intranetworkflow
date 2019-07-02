@@ -33,7 +33,7 @@ setup(
     install_requires=[
         'Products.GenericSetup>=1.8.2',
         'setuptools',
-        'redturtle.deletepolicy',
+        # 'redturtle.deletepolicy',
         'rt.lastmodifier',
     ],
     entry_points="""

@@ -8,7 +8,7 @@
   </roles>
 
   <permissions>
-    <permission name="ATContentTypes: Add Document"
+    <permission name="plone.app.contenttypes: Add Document"
                 acquire="True">
       <role name="CSer"/>
       <role name="CUff"/>
@@ -17,7 +17,7 @@
       <role name="SegGen"/>
       <role name="Site Administrator"/>
     </permission>
-    <permission name="ATContentTypes: Add Event"
+    <permission name="plone.app.contenttypes: Add Event"
                 acquire="True">
       <role name="CSer"/>
       <role name="CUff"/>
@@ -26,7 +26,7 @@
       <role name="SegGen"/>
       <role name="Site Administrator"/>
     </permission>
-    <permission name="ATContentTypes: Add File"
+    <permission name="plone.app.contenttypes: Add File"
                 acquire="True">
       <role name="CSer"/>
       <role name="CUff"/>
@@ -35,7 +35,7 @@
       <role name="SegGen"/>
       <role name="Site Administrator"/>
     </permission>
-    <permission name="ATContentTypes: Add Folder"
+    <permission name="plone.app.contenttypes: Add Folder"
                 acquire="True">
       <role name="CSer"/>
       <role name="CUff"/>
@@ -43,16 +43,7 @@
       <role name="SegGen"/>
       <role name="Site Administrator"/>
     </permission>
-    <permission name="ATContentTypes: Add Image"
-                acquire="True">
-      <role name="CSer"/>
-      <role name="CUff"/>
-      <role name="Editor"/>
-	  <role name="Contributor"/>
-      <role name="SegGen"/>
-      <role name="Site Administrator"/>
-    </permission>
-    <permission name="ATContentTypes: Add Link"
+    <permission name="plone.app.contenttypes: Add Image"
                 acquire="True">
       <role name="CSer"/>
       <role name="CUff"/>
@@ -61,7 +52,16 @@
       <role name="SegGen"/>
       <role name="Site Administrator"/>
     </permission>
-    <permission name="ATContentTypes: Add News Item"
+    <permission name="plone.app.contenttypes: Add Link"
+                acquire="True">
+      <role name="CSer"/>
+      <role name="CUff"/>
+      <role name="Editor"/>
+	  <role name="Contributor"/>
+      <role name="SegGen"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="plone.app.contenttypes: Add News Item"
                 acquire="True">
       <role name="CSer"/>
       <role name="CUff"/>
@@ -93,7 +93,7 @@
       <role name="Site Administrator"/>
     </permission>
 
-    <permission name="Add portal topics" acquire="True">
+    <permission name="plone.app.contenttypes: Add Collection" acquire="True">
       <role name="CSer"/>
       <role name="CUff"/>
       <role name="SegGen"/>
@@ -119,12 +119,6 @@
       <role name="CSer"/>
       <role name="CUff"/>
       <role name="Editor"/>
-      <role name="SegGen"/>
-      <role name="Site Administrator"/>
-    </permission>
-    <permission name="Change portal topics" acquire="True">
-      <role name="CSer"/>
-      <role name="CUff"/>
       <role name="SegGen"/>
       <role name="Site Administrator"/>
     </permission>

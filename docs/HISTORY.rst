@@ -4,7 +4,7 @@ Changelog
 2.2.0 (unreleased)
 ------------------
 
-- Plone 5 compatibility.
+- Plone 52 and python 3 compatibility.
   [cekk]
 
 

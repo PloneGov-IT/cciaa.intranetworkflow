@@ -12,9 +12,9 @@ plone_utils = context.plone_utils
 
 message = """E' stato sottoposto a revisione un nuovo contenuto destinato alla home-page.
 
-Titolo del documento: "%s"
+Titolo del documento: "{title}"
 
-%s""" % (context.title_or_id(), context.absolute_url())
+{url}""".format({'title': context.title_or_id(), 'format': context.absolute_url()})
 
 member = context.portal_membership.getAuthenticatedMember()
 memail = member.getProperty('email')
