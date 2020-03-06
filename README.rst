@@ -22,7 +22,9 @@ After that, you will found a new installable product: CCIAA Workflow
 Dependency
 ----------
 
-Tested on Plone 4.3.x
+Tested on Plone 5.2
+
+For Plone 4.3 compatibility, use **plone4** development branch and 2.x tags.
 
 Contribute
 ----------

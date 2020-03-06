@@ -1,20 +1,32 @@
 # -*- coding: utf-8 -*-
-
-from Products.CMFCore.utils import getToolByName
-
-
-def setupVarious(context):
-    portal = context.getSite()
-
-    if context.readDataFile('cciaa.intranetworkflow_various.txt') is None:
-        return
-
-    createUsers(context, portal)
+from plone import api
+from Products.CMFPlone.interfaces import INonInstallable
+from zope.interface import implementer
 
 
-def createUsers(context, portal):
+@implementer(INonInstallable)
+class HiddenProfiles(object):
+
+    def getNonInstallableProfiles(self):
+        """Hide uninstall profile from site-creation and quickinstaller."""
+        return [
+            'cciaa.intranetworkflow:uninstall',
+        ]
+
+
+def post_install(context):
+    """Post install script"""
+    # Do something at the end of the installation of this package.
+
+
+def uninstall(context):
+    """Uninstall script"""
+    # Do something at the end of the uninstallation of this package.
+
+
+def createUsers():
     """Crea gli utnenti di test de portale"""
-    acl_users = getToolByName(portal, 'acl_users')
+    acl_users = api.portal.get_tool(name="acl_users")
     users = (
         (
             'cc_normal',
@@ -60,6 +72,7 @@ def createUsers(context, portal):
         ),
     )
     for e in users:
+        import pdb;pdb.set_trace()
         kwargs = e[3]
         kwargs['email'] = e[0] + "@redturtle.it"
         acl_users.userFolderAddUser(

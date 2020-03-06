@@ -398,5 +398,5 @@
   <guard>
   </guard>
  </variable>
- <script script_id="notificaHome" type="Script (Python)" filename="workflows/camcom_public_workflow/scripts/notificaHome.py" module="" function=""/>
+ <!-- <script script_id="notificaHome" type="Script (Python)" filename="workflows/camcom_public_workflow/scripts/notificaHome.py" module="" function=""/> -->
 </dc-workflow>
