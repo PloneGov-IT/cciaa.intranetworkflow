@@ -1,7 +1,7 @@
 Changelog
 =========
 
-3.0.0 (unreleased)
+3.0.0 (2020-03-06)
 ------------------
 
 - Plone 52 and python 3 compatibility.
