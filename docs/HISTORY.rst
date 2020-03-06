@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.2.0 (unreleased)
+3.0.0 (unreleased)
 ------------------
 
 - Plone 52 and python 3 compatibility.
