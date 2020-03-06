@@ -101,7 +101,7 @@ Plone 4(.3) compatibility
  - Fix minori e installazione in CCIAA di Treviso
 
 1.0.0 - Unreleased
-----------------
+------------------
 
 - Prima release
 
